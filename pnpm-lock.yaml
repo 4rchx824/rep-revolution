@@ -33,16 +33,16 @@ dependencies:
     specifier: ^4.36.1
     version: 4.36.1(react-dom@18.2.0)(react@18.2.0)
   '@trpc/client':
-    specifier: ^10.44.1
+    specifier: ^10.43.6
     version: 10.44.1(@trpc/server@10.44.1)
   '@trpc/next':
-    specifier: ^10.44.1
+    specifier: ^10.43.6
     version: 10.44.1(@tanstack/react-query@4.36.1)(@trpc/client@10.44.1)(@trpc/react-query@10.44.1)(@trpc/server@10.44.1)(next@14.0.3)(react-dom@18.2.0)(react@18.2.0)
   '@trpc/react-query':
-    specifier: ^10.44.1
+    specifier: ^10.43.6
     version: 10.44.1(@tanstack/react-query@4.36.1)(@trpc/client@10.44.1)(@trpc/server@10.44.1)(react-dom@18.2.0)(react@18.2.0)
   '@trpc/server':
-    specifier: ^10.44.1
+    specifier: ^10.43.6
     version: 10.44.1
   class-variance-authority:
     specifier: ^0.7.0
@@ -98,25 +98,25 @@ devDependencies:
     specifier: ^14.0.3
     version: 14.0.3
   '@types/eslint':
-    specifier: ^8.44.8
+    specifier: ^8.44.7
     version: 8.44.8
   '@types/node':
-    specifier: ^18.18.14
+    specifier: ^18.17.0
     version: 18.18.14
   '@types/react':
-    specifier: ^18.2.39
+    specifier: ^18.2.37
     version: 18.2.39
   '@types/react-dom':
-    specifier: ^18.2.17
+    specifier: ^18.2.15
     version: 18.2.17
   '@typescript-eslint/eslint-plugin':
-    specifier: ^6.13.1
+    specifier: ^6.11.0
     version: 6.13.1(@typescript-eslint/parser@6.13.1)(eslint@8.54.0)(typescript@5.3.2)
   '@typescript-eslint/parser':
-    specifier: ^6.13.1
+    specifier: ^6.11.0
     version: 6.13.1(eslint@8.54.0)(typescript@5.3.2)
   autoprefixer:
-    specifier: ^10.4.16
+    specifier: ^10.4.14
     version: 10.4.16(postcss@8.4.31)
   eslint:
     specifier: ^8.54.0
@@ -137,7 +137,7 @@ devDependencies:
     specifier: ^3.3.5
     version: 3.3.5
   typescript:
-    specifier: ^5.3.2
+    specifier: ^5.1.6
     version: 5.3.2
 
 packages:
