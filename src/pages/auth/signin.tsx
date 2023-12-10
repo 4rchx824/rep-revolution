@@ -1,15 +1,14 @@
 import React, { useEffect } from "react";
-import { signIn, signOut, useSession, getProviders } from "next-auth/react";
+import { signIn, getProviders } from "next-auth/react";
 import type {
   GetServerSidePropsContext,
   InferGetServerSidePropsType,
 } from "next";
 import { Button } from "@/components/ui/button";
 import { Button as NextButton } from "@nextui-org/react";
-import { authOptions } from "@/server/auth";
-import { getServerSession } from "next-auth";
+import { getServerAuthSession } from "@/server/auth";
 import Image from "next/image";
-import { Router, useRouter } from "next/router";
+import { useRouter } from "next/router";
 import { toast } from "sonner";
 
 type Props = {
@@ -30,14 +29,14 @@ const Page = ({ providers }: Props) => {
       <div className="flex min-h-[100dvh] w-full flex-col items-center justify-center bg-white">
         <div className="w-full max-w-sm space-y-4">
           <h1 className="text-center text-2xl font-semibold tracking-tighter">
-            <span className="text-red-600 font-bold">Login </span>to continue
+            <span className="font-bold text-red-600">Login </span>to continue
           </h1>
           <Image
             src="/assets/images/login-art.png"
             alt="svg art"
             width={384}
             height={384}
-            className="animate-wiggle w-full"
+            className="w-full animate-wiggle"
           />
 
           <div className="flex w-full space-x-4">
@@ -120,7 +119,7 @@ const Page = ({ providers }: Props) => {
 export default Page;
 
 export async function getServerSideProps(ctx: GetServerSidePropsContext) {
-  const session = await getServerSession(ctx.req, ctx.res, authOptions);
+  const session = await getServerAuthSession(ctx);
 
   if (session) {
     return { redirect: { destination: "/dashboard" } };
