@@ -39,7 +39,7 @@ const Page = ({ providers }: Props) => {
             className="w-full animate-wiggle"
           />
 
-          <div className="flex w-full flex-col items-center justify-center space-y-4 md:flex-row md:space-x-4 md:space-y-0">
+          <div className="flex w-full flex-col items-center justify-center space-y-4 md:flex-row md:space-x-4 md:space-y-0 px-8">
             {
               // @ts-expect-error exists
               // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
