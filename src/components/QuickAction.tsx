@@ -7,33 +7,39 @@ import {
 } from "@/components/ui/card";
 import { PlusIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { forwardRef, type ButtonHTMLAttributes, type FC } from "react";
+import { Button } from "@nextui-org/react";
 
-type Props = {
-  classname?: string;
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+  className?: string;
   title?: string;
   description?: string;
   icon?: JSX.Element;
-};
+  onClick: () => void;
+}
 
-const QuickAction = ({ classname, title, description, icon }: Props) => {
-  return (
-    <Card
-      className={cn(
-        classname,
-        "w-full max-w-sm cursor-pointer transition-all duration-300 hover:shadow-lg",
-      )}
-    >
-      <div className="flex items-center justify-between">
-        <CardHeader>
-          <CardTitle>{title ?? ""}</CardTitle>
-          <CardDescription>{description ?? ""}</CardDescription>
-        </CardHeader>
-        <CardContent className="py-0">
-          {icon ?? <PlusIcon className="text-red-600" size={48} />}
-        </CardContent>
-      </div>
-    </Card>
-  );
-};
+const QuickAction = forwardRef<HTMLButtonElement, Props>(
+  ({ className, title, description, icon, onClick }: Props) => {
+    return (
+      <Button
+        className={cn(
+          className,
+          "flex h-full w-full max-w-sm border bg-white transition-all",
+        )}
+        onClick={onClick}
+      >
+        <div className="flex items-center justify-between">
+          <CardHeader>
+            <CardTitle className="flex">{title ?? ""}</CardTitle>
+            <CardDescription>{description ?? ""}</CardDescription>
+          </CardHeader>
+          <CardContent className="py-0">
+            {icon ?? <PlusIcon className="text-red-600" size={48} />}
+          </CardContent>
+        </div>
+      </Button>
+    );
+  },
+);
 
 export default QuickAction;

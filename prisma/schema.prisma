@@ -54,6 +54,8 @@ model User {
     muscle_groups    MuscleGroup[]
 }
 
+
+
 model WorkoutPlanExercise {
     workout_plan_exercise_id String     @id @default(cuid())
     target_sets              Int

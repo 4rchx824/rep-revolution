@@ -73,12 +73,11 @@ const Page = ({ providers }: Props) => {
               // @ts-expect-error exists
               // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
               providers?.google?.id && (
-                <Button
+                <NextButton
                   // @ts-expect-error exists
                   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
                   onClick={() => void signIn(providers.google.id)}
-                  className="flex w-full items-center justify-center gap-3 rounded-md px-3 py-1.5 "
-                  variant={"outline"}
+                  className="flex w-full items-center justify-center gap-3 rounded-md px-3 py-1.5 bg-white border"
                 >
                   <svg
                     className="h-5 w-5"
@@ -106,7 +105,7 @@ const Page = ({ providers }: Props) => {
                   <span className="text-sm font-semibold leading-6">
                     Google
                   </span>
-                </Button>
+                </NextButton>
               )
             }
           </div>
